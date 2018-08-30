@@ -20,6 +20,11 @@ h1 {
     font-weight: 200;
 }
 
+h2 {
+    font-size: 1em;
+    font-weight: 200;
+}
+
 div.nav-bar {
     width: 100%;
     background: #ffffff;
@@ -41,12 +46,16 @@ div.nav-bar {
     border-right: none;
     border-bottom: 1px solid #222222;
     color: #222222;
-    padding: 10px 35px;
+    padding: 10px 0px;
+    min-width: 110px;
+    max-width: 110px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-weight: 200;
     font-size: 0.9em;
+    text-align: center;
+    margin: 0px 2.5px;
 }
 
 .nav-button:hover {
