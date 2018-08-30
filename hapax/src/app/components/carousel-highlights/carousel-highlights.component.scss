@@ -18,15 +18,26 @@
     }
 }
 .secondary-highlight {
+    width: 50%;
+    min-width: 0px;
+    max-width: 100px;
+
     img {
-        width:100px;
+        width: 100%;
         opacity: 0.5;
     }
     div {
         text-align: center;
-        font-size: 0.5em;
-        width: 100px;
+        min-width: 0px;
+        max-width: 100px;
         overflow-wrap: normal;
+    }
+
+    @media screen and (min-width: 1201px) {
+        font-size: 0.5em;
+    }
+    @media screen and (max-width: 1200px){
+        font-size: 0px;
     }
 }
 
