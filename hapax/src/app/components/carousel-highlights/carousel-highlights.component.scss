@@ -1,0 +1,57 @@
+.carousel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-highlight {
+    flex: wrap;
+    justify-content: center;
+    img {
+        width: 200px;
+    }
+    div {
+        text-align: center;
+        width: 200px;
+        overflow-wrap: normal;
+    }
+}
+.secondary-highlight {
+    img {
+        width:100px;
+        opacity: 0.5;
+    }
+    div {
+        text-align: center;
+        font-size: 0.5em;
+        width: 100px;
+        overflow-wrap: normal;
+    }
+}
+
+button {
+    background-color: #ffffff;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #222222;
+    color: #222222;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 200;
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0px 2.5px;
+}
+
+button:hover {
+    background-color: #eeeeee;
+}
+
+button:focus {
+    background-color: #eeeeee;
+    outline: none;
+}

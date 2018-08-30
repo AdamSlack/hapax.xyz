@@ -66,3 +66,23 @@ div.nav-bar {
     background-color: #eeeeee;
     outline: none;
 }
+
+.half-container {
+    width: 50%;
+}
+
+.quarter-container {
+    width: 25%;
+}
+
+.third-container {
+    width: 33%;
+}
+
+.two-third-container {
+    width: 66%;
+}
+
+.centred-container {
+    margin: 0px auto;
+}
