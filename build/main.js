@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".wrapper {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.content {\n  flex: 1 0 auto;\n}\n.footer {\n  flex-shrink: 0;\n}"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<app-header-bar></app-header-bar>\n<app-nav-bar></app-nav-bar>\n\n<router-outlet></router-outlet>\n"
+module.exports = "<div class=\"wrapper\">\n    <div class=\"content\">\n        <app-header-bar></app-header-bar>\n        <app-nav-bar></app-nav-bar>\n\n        <router-outlet></router-outlet>\n    </div>\n    <div class=\"footer\">\n        <app-footer></app-footer>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -101,12 +101,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_about_page_about_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/about-page/about-page.component */ "./src/app/pages/about-page/about-page.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_carousel_highlights_carousel_highlights_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/carousel-highlights/carousel-highlights.component */ "./src/app/components/carousel-highlights/carousel-highlights.component.ts");
+/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -136,6 +138,7 @@ var AppModule = /** @class */ (function () {
                 _pages_projects_page_projects_page_component__WEBPACK_IMPORTED_MODULE_6__["ProjectsPageComponent"],
                 _pages_about_page_about_page_component__WEBPACK_IMPORTED_MODULE_7__["AboutPageComponent"],
                 _components_carousel_highlights_carousel_highlights_component__WEBPACK_IMPORTED_MODULE_9__["CarouselHighlightsComponent"],
+                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_10__["FooterComponent"],
             ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoutes, { enableTracing: false } // <-- debugging purposes only
@@ -190,7 +193,7 @@ var ImageObject = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>{{carouselTitle}}</div>\n<div class=\"carousel\">\n    <button (click)=\"displayPreviousHighlight()\"><</button>\n  <div class=\"secondary-highlight\">\n    <img src={{leftSecondaryHighlight.imgSrc}} alt={{leftSecondaryHighlight.altText}} title={{leftSecondaryHighlight.tooltipText}}>\n    <div>{{leftSecondaryHighlight.titleText}}</div>\n    </div>\n  <div class=\"primary-highlight\">\n      <img src={{primaryHighlight.imgSrc}} alt={{primaryHighlight.altText}} title={{primaryHighlight.tooltipText}}>\n      <div>{{primaryHighlight.titleText}}</div>\n  </div>\n  <div class=\"secondary-highlight\">\n      <img src={{rightSecondaryHighlight.imgSrc}} alt={{rightSecondaryHighlight.altText}} title={{rightSecondaryHighlight.tooltipText}}>\n      <div>{{rightSecondaryHighlight.titleText}}</div>\n    </div>\n  <button (click)=\"displayNextHighlight()\">></button>\n</div>"
+module.exports = "<div class=\"carousel\">\n    <button (click)=\"displayPreviousHighlight()\"><</button>\n  <div class=\"secondary-highlight\">\n    <img src={{leftSecondaryHighlight.imgSrc}} alt={{leftSecondaryHighlight.altText}} title={{leftSecondaryHighlight.tooltipText}}>\n    <div>{{leftSecondaryHighlight.titleText}}</div>\n    </div>\n  <div class=\"primary-highlight\">\n      <img src={{primaryHighlight.imgSrc}} alt={{primaryHighlight.altText}} title={{primaryHighlight.tooltipText}}>\n      <div>{{primaryHighlight.titleText}}</div>\n  </div>\n  <div class=\"secondary-highlight\">\n      <img src={{rightSecondaryHighlight.imgSrc}} alt={{rightSecondaryHighlight.altText}} title={{rightSecondaryHighlight.tooltipText}}>\n      <div>{{rightSecondaryHighlight.titleText}}</div>\n    </div>\n  <button (click)=\"displayNextHighlight()\">></button>\n</div>"
 
 /***/ }),
 
@@ -201,7 +204,7 @@ module.exports = "<div>{{carouselTitle}}</div>\n<div class=\"carousel\">\n    <b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".carousel {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.primary-highlight {\n  flex: wrap;\n  justify-content: center; }\n\n.primary-highlight img {\n    width: 200px; }\n\n.primary-highlight div {\n    text-align: center;\n    width: 200px;\n    overflow-wrap: normal; }\n\n.secondary-highlight {\n  width: 50%;\n  min-width: 0px;\n  max-width: 100px; }\n\n.secondary-highlight img {\n    width: 100%;\n    opacity: 0.5; }\n\n.secondary-highlight div {\n    text-align: center;\n    min-width: 0px;\n    max-width: 100px;\n    overflow-wrap: normal; }\n\n@media screen and (min-width: 1201px) {\n    .secondary-highlight {\n      font-size: 0.5em; } }\n\n@media screen and (max-width: 1200px) {\n    .secondary-highlight {\n      font-size: 0px; } }\n\nbutton {\n  background-color: #ffffff;\n  border-left: none;\n  border-top: none;\n  border-right: none;\n  border-bottom: 1px solid #222222;\n  color: #222222;\n  padding: 10px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-weight: 200;\n  font-size: 0.9em;\n  text-align: center;\n  margin: 0px 2.5px; }\n\nbutton:hover {\n  background-color: #eeeeee; }\n\nbutton:focus {\n  background-color: #eeeeee;\n  outline: none; }\n"
+module.exports = ".carousel {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.primary-highlight {\n  flex: wrap;\n  justify-content: center;\n  margin: 5px; }\n\n.primary-highlight img {\n    width: 200px; }\n\n.primary-highlight div {\n    text-align: center;\n    width: 200px;\n    overflow-wrap: normal; }\n\n.secondary-highlight {\n  width: 50%;\n  min-width: 0px;\n  max-width: 100px; }\n\n.secondary-highlight img {\n    width: 100%;\n    opacity: 0.5; }\n\n.secondary-highlight div {\n    text-align: center;\n    min-width: 0px;\n    max-width: 100px;\n    overflow-wrap: normal; }\n\n@media screen and (min-width: 1201px) {\n    .secondary-highlight {\n      font-size: 0.5em; } }\n\n@media screen and (max-width: 1200px) {\n    .secondary-highlight {\n      font-size: 0px; } }\n\nbutton {\n  background-color: #ffffff;\n  border-left: none;\n  border-top: none;\n  border-right: none;\n  border-bottom: 1px solid #222222;\n  color: #222222;\n  padding: 10px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-weight: 200;\n  font-size: 0.9em;\n  text-align: center;\n  margin: 0px 2.5px; }\n\nbutton:hover {\n  background-color: #eeeeee; }\n\nbutton:focus {\n  background-color: #eeeeee;\n  outline: none; }\n"
 
 /***/ }),
 
@@ -260,7 +263,6 @@ var CarouselHighlightsComponent = /** @class */ (function () {
         this.rightSecondaryHighlight = this.carouselHighlights[this.incrementHighlightIndex(this.highlightIndex)];
     };
     CarouselHighlightsComponent.prototype.displayPreviousHighlight = function () {
-        console.log(this.highlightIndex);
         this.rightSecondaryHighlight = this.carouselHighlights[this.highlightIndex];
         this.highlightIndex = this.decrimentHighlightIndex(this.highlightIndex);
         this.primaryHighlight = this.carouselHighlights[this.highlightIndex];
@@ -283,6 +285,69 @@ var CarouselHighlightsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_carousel_highlights_service__WEBPACK_IMPORTED_MODULE_1__["CarouselHighlightsService"]])
     ], CarouselHighlightsComponent);
     return CarouselHighlightsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/footer/footer.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/footer/footer.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"footer\">\n  <div class=\"footer-container nine-tengths-container\">\n      <div class=\"full-container copyright\">© 2018 Hapax.xyz | Adam Slack | All Rights Reserved</div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/footer/footer.component.scss":
+/*!*********************************************************!*\
+  !*** ./src/app/components/footer/footer.component.scss ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".footer {\n  width: 100%;\n  padding: 10px; }\n\n.footer-container {\n  display: flex; }\n\n.copyright {\n  font-size: 0.75em; }\n\n@media screen and (min-width: 801px) {\n  .copyright {\n    font-size: 0.75em; } }\n\n@media screen and (max-width: 800px) {\n  .copyright {\n    font-size: 0.66em; } }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/footer/footer.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/footer/footer.component.ts ***!
+  \*******************************************************/
+/*! exports provided: FooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FooterComponent = /** @class */ (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-footer',
+            template: __webpack_require__(/*! ./footer.component.html */ "./src/app/components/footer/footer.component.html"),
+            styles: [__webpack_require__(/*! ./footer.component.scss */ "./src/app/components/footer/footer.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FooterComponent);
+    return FooterComponent;
 }());
 
 
@@ -433,7 +498,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>About Page</div>\n"
+module.exports = "<br>\n<div class=\"desktop-half-container centred-container mobile-nine-tenths-container\">We are experts in:</div>\n<br>\n<div class=\"mobile-half-container desktop-half-container centred-container\">\n        <app-carousel-highlights [carouselName]=\"'homePage'\" [carouselTitle]=\"'We are experts in:'\"></app-carousel-highlights>\n</div>\n"
 
 /***/ }),
 
@@ -496,7 +561,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<br>\n<br>\n<div class=\"third-container centred-container\">\n        <app-carousel-highlights [carouselName]=\"'homePage'\" [carouselTitle]=\"'We are experts in:'\"></app-carousel-highlights>\n</div>\n"
+module.exports = "<br>\n<br>\n<br>\n<div class=\"mobile-nine-tenths-container desktop-third-container centred-container description\">\n        Hapax Legomenon - A word that only occurs once within a body text.\n        We specialise in building the hapax legomena of software. We do this\n        by turning your unique ideas into bespoke solutions.\n</div>\n<br>\n<br>\n<br>\n<div class=\"line-break centred-container desktop-two-third-container mobile-nine-tenths-container\"></div>\n<br>\n<br>\n<br>\n"
 
 /***/ }),
 
