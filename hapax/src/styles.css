@@ -67,20 +67,60 @@ div.nav-bar {
     outline: none;
 }
 
-.half-container {
-    width: 50%;
+.full-container {width: 100%;}
+@media screen and (min-width: 801px){
+    .desktop-full-container {width: 100% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-full-container {width: 100% !important;}
 }
 
-.quarter-container {
-    width: 25%;
+.half-container {width: 50%;}
+@media screen and (min-width: 801px){
+    .desktop-half-container {width: 50% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-half-container {width: 50% !important;}
 }
 
-.third-container {
-    width: 33%;
+.quarter-container {width: 25%;}
+@media screen and (min-width: 801px){
+    .desktop-quarter-container {width: 25% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-quarter-container {width: 25% !important;}
 }
 
-.two-third-container {
-    width: 66%;
+.third-container {width: 33%;}
+@media screen and (min-width: 801px){
+    .desktop-third-container {width: 33% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-third-container {width: 33% !important;}
+}
+
+.two-third-container {width: 66%;}
+@media screen and (min-width: 801px){
+    .desktop-two-third-container {width: 66% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-two-third-container {width: 66% !important;}
+}
+
+.three-quarter-container {width: 74%;}
+@media screen and (min-width: 801px){
+    .desktop-three-quarter-container {width: 75% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-three-quarter-container {width: 75% !important;}
+}
+
+.nine-tenths-container {width: 90%;}
+@media screen and (min-width: 801px){
+    .desktop-nine-tenths-container {width: 90% !important;}
+}
+@media screen and (max-width: 800px){
+    .mobile-nine-tenths-container {width: 90% !important;}
 }
 
 .centred-container {

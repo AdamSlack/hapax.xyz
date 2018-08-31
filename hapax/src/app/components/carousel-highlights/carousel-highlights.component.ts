@@ -56,7 +56,6 @@ export class CarouselHighlightsComponent implements OnInit {
   }
 
   public displayPreviousHighlight(){
-    console.log(this.highlightIndex);
     this.rightSecondaryHighlight = this.carouselHighlights[this.highlightIndex];
 
     this.highlightIndex = this.decrimentHighlightIndex(this.highlightIndex);
