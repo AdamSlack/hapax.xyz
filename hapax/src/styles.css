@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500');
-body {
+html, body {
     margin: 0;
     width: 100%;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
 }
 
 div.header-bar {
