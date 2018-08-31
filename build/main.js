@@ -102,12 +102,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_carousel_highlights_carousel_highlights_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/carousel-highlights/carousel-highlights.component */ "./src/app/components/carousel-highlights/carousel-highlights.component.ts");
 /* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
+/* harmony import */ var _components_focused_highlights_focused_highlights_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/focused-highlights/focused-highlights.component */ "./src/app/components/focused-highlights/focused-highlights.component.ts");
+/* harmony import */ var _components_ask_us_search_ask_us_search_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/ask-us-search/ask-us-search.component */ "./src/app/components/ask-us-search/ask-us-search.component.ts");
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "./node_modules/@fortawesome/angular-fontawesome/fesm5/angular-fontawesome.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -139,11 +145,14 @@ var AppModule = /** @class */ (function () {
                 _pages_about_page_about_page_component__WEBPACK_IMPORTED_MODULE_7__["AboutPageComponent"],
                 _components_carousel_highlights_carousel_highlights_component__WEBPACK_IMPORTED_MODULE_9__["CarouselHighlightsComponent"],
                 _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_10__["FooterComponent"],
+                _components_focused_highlights_focused_highlights_component__WEBPACK_IMPORTED_MODULE_11__["FocusedHighlightsComponent"],
+                _components_ask_us_search_ask_us_search_component__WEBPACK_IMPORTED_MODULE_12__["AskUsSearchComponent"],
             ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoutes, { enableTracing: false } // <-- debugging purposes only
                 ),
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
@@ -186,6 +195,76 @@ var ImageObject = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/ask-us-search/ask-us-search.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/ask-us-search/ask-us-search.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ask-us-search\">\n    <input type=\"text\" class=\"search\" placeholder={{placeholderQuery}}>\n    <button type=\"submit\" class=\"search-button\"><fa-icon [icon]=\"faSearch\"></fa-icon></button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/ask-us-search/ask-us-search.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/ask-us-search/ask-us-search.component.scss ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".ask-us-search {\n  display: flex; }\n\n.search-button {\n  background-color: #ffffff;\n  border-left: none;\n  border-top: none;\n  border-right: none;\n  border-bottom: 1px solid #222222;\n  color: #222222;\n  padding: 10px 15px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-weight: 200;\n  font-size: 0.9em;\n  text-align: center; }\n\n.search-button:hover {\n  background-color: #eeeeee; }\n\n.search-button:focus {\n  background-color: #eeeeee;\n  outline: none; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/ask-us-search/ask-us-search.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/ask-us-search/ask-us-search.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: AskUsSearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AskUsSearchComponent", function() { return AskUsSearchComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_ask_us_search_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/ask-us-search.service */ "./src/app/services/ask-us-search.service.ts");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AskUsSearchComponent = /** @class */ (function () {
+    function AskUsSearchComponent(askUs) {
+        this.askUs = askUs;
+        this.faSearch = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faSearch"];
+        this.placeholderQuery = askUs.getRandomQuery();
+    }
+    AskUsSearchComponent.prototype.ngOnInit = function () {
+    };
+    AskUsSearchComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-ask-us-search',
+            template: __webpack_require__(/*! ./ask-us-search.component.html */ "./src/app/components/ask-us-search/ask-us-search.component.html"),
+            styles: [__webpack_require__(/*! ./ask-us-search.component.scss */ "./src/app/components/ask-us-search/ask-us-search.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_ask_us_search_service__WEBPACK_IMPORTED_MODULE_1__["AskUsSearchService"]])
+    ], AskUsSearchComponent);
+    return AskUsSearchComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/carousel-highlights/carousel-highlights.component.html":
 /*!***********************************************************************************!*\
   !*** ./src/app/components/carousel-highlights/carousel-highlights.component.html ***!
@@ -193,7 +272,7 @@ var ImageObject = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"carousel\">\n    <button (click)=\"displayPreviousHighlight()\"><</button>\n  <div class=\"secondary-highlight\">\n    <img src={{leftSecondaryHighlight.imgSrc}} alt={{leftSecondaryHighlight.altText}} title={{leftSecondaryHighlight.tooltipText}}>\n    <div>{{leftSecondaryHighlight.titleText}}</div>\n    </div>\n  <div class=\"primary-highlight\">\n      <img src={{primaryHighlight.imgSrc}} alt={{primaryHighlight.altText}} title={{primaryHighlight.tooltipText}}>\n      <div>{{primaryHighlight.titleText}}</div>\n  </div>\n  <div class=\"secondary-highlight\">\n      <img src={{rightSecondaryHighlight.imgSrc}} alt={{rightSecondaryHighlight.altText}} title={{rightSecondaryHighlight.tooltipText}}>\n      <div>{{rightSecondaryHighlight.titleText}}</div>\n    </div>\n  <button (click)=\"displayNextHighlight()\">></button>\n</div>"
+module.exports = "<div class=\"carousel\">\n    <button (click)=\"displayPreviousHighlight()\"><</button>\n  <div class=\"secondary-highlight\">\n    <img src={{leftSecondaryHighlight.imgSrc}} alt={{leftSecondaryHighlight.altText}} title={{leftSecondaryHighlight.tooltipText}}>\n    <div>{{leftSecondaryHighlight.titleText}}</div>\n    </div>\n  <div class=\"primary-highlight\">\n      <img src={{primaryHighlight.imgSrc}} alt={{primaryHighlight.altText}} title={{primaryHighlight.tooltipText}}>\n      <div>{{primaryHighlight.titleText}}</div>\n  </div>\n  <div class=\"secondary-highlight\">\n      <img src={{rightSecondaryHighlight.imgSrc}} alt={{rightSecondaryHighlight.altText}} title={{rightSecondaryHighlight.tooltipText}}>\n      <div>{{rightSecondaryHighlight.titleText}}</div>\n    </div>\n  <button (click)=\"displayNextHighlight()\">></button>\n</div>\n"
 
 /***/ }),
 
@@ -204,7 +283,7 @@ module.exports = "<div class=\"carousel\">\n    <button (click)=\"displayPreviou
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".carousel {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.primary-highlight {\n  flex: wrap;\n  justify-content: center;\n  margin: 5px; }\n\n.primary-highlight img {\n    width: 200px; }\n\n.primary-highlight div {\n    text-align: center;\n    width: 200px;\n    overflow-wrap: normal; }\n\n.secondary-highlight {\n  width: 50%;\n  min-width: 0px;\n  max-width: 100px; }\n\n.secondary-highlight img {\n    width: 100%;\n    opacity: 0.5; }\n\n.secondary-highlight div {\n    text-align: center;\n    min-width: 0px;\n    max-width: 100px;\n    overflow-wrap: normal; }\n\n@media screen and (min-width: 1201px) {\n    .secondary-highlight {\n      font-size: 0.5em; } }\n\n@media screen and (max-width: 1200px) {\n    .secondary-highlight {\n      font-size: 0px; } }\n\nbutton {\n  background-color: #ffffff;\n  border-left: none;\n  border-top: none;\n  border-right: none;\n  border-bottom: 1px solid #222222;\n  color: #222222;\n  padding: 10px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-weight: 200;\n  font-size: 0.9em;\n  text-align: center;\n  margin: 0px 2.5px; }\n\nbutton:hover {\n  background-color: #eeeeee; }\n\nbutton:focus {\n  background-color: #eeeeee;\n  outline: none; }\n"
+module.exports = ".carousel {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 250px; }\n\n.primary-highlight {\n  flex: wrap;\n  justify-content: center;\n  margin: 5px; }\n\n.primary-highlight img {\n    width: 200px; }\n\n.primary-highlight div {\n    text-align: center;\n    width: 200px;\n    overflow-wrap: normal; }\n\n.secondary-highlight {\n  width: 50%;\n  min-width: 0px;\n  max-width: 100px; }\n\n.secondary-highlight img {\n    opacity: 0.5; }\n\n.secondary-highlight div {\n    text-align: center;\n    min-width: 0px;\n    max-width: 100px;\n    overflow-wrap: normal; }\n\n@media screen and (min-width: 1201px) {\n    .secondary-highlight {\n      font-size: 0.5em; } }\n\n@media screen and (max-width: 1200px) {\n    .secondary-highlight {\n      font-size: 0px; } }\n\n@media screen and (min-width: 701px) {\n    .secondary-highlight img {\n      width: 100%; } }\n\n@media screen and (max-width: 700px) {\n    .secondary-highlight img {\n      width: 0%; } }\n\nbutton {\n  background-color: #ffffff;\n  border-left: none;\n  border-top: none;\n  border-right: none;\n  border-bottom: 1px solid #222222;\n  color: #222222;\n  padding: 10px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-weight: 200;\n  font-size: 0.9em;\n  text-align: center;\n  margin: 0px 2.5px; }\n\nbutton:hover {\n  background-color: #eeeeee; }\n\nbutton:focus {\n  background-color: #eeeeee;\n  outline: none; }\n"
 
 /***/ }),
 
@@ -239,7 +318,7 @@ var CarouselHighlightsComponent = /** @class */ (function () {
     }
     CarouselHighlightsComponent.prototype.ngOnInit = function () {
         this.carouselHighlights = this.highlights.pageImageHighlights[this.carouselName];
-        this.highlightIndex = this.carouselHighlights.length - 1;
+        this.highlightIndex = Math.floor(this.carouselHighlights.length / 2) - 1;
         this.displayNextHighlight();
     };
     CarouselHighlightsComponent.prototype.incrementHighlightIndex = function (highlightIndex) {
@@ -285,6 +364,107 @@ var CarouselHighlightsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_carousel_highlights_service__WEBPACK_IMPORTED_MODULE_1__["CarouselHighlightsService"]])
     ], CarouselHighlightsComponent);
     return CarouselHighlightsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/focused-highlights/focused-highlights.component.html":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/focused-highlights/focused-highlights.component.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"carousel\">\n    <button (click)=\"displayPreviousHighlight()\"><</button>\n    <div class=\"secondary-highlight\" *ngFor=\"let highlight of leftHighlights\">\n      <img src={{highlight.imgSrc}} alt={{highlight.altText}} title={{highlight.tooltipText}}>\n      <div>{{highlight.titleText}}</div>\n    </div>\n  \n    <div class=\"primary-highlight\">\n        <img src={{selectedHighlight.imgSrc}} alt={{selectedHighlight.altText}} title={{selectedHighlight.tooltipText}}>\n        <div>{{selectedHighlight.titleText}}</div>\n    </div>\n  \n    <div class=\"secondary-highlight\" *ngFor=\"let highlight of rightHighlights\">\n      <img src={{highlight.imgSrc}} alt={{highlight.altText}} title={{highlight.tooltipText}}>\n      <div>{{highlight.titleText}}</div>\n    </div>\n    <button (click)=\"displayNextHighlight()\">></button>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/focused-highlights/focused-highlights.component.scss":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/focused-highlights/focused-highlights.component.scss ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".carousel {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 250px; }\n\n.primary-highlight {\n  flex: wrap;\n  justify-content: center;\n  margin: 5px; }\n\n.primary-highlight img {\n    width: 200px; }\n\n.primary-highlight div {\n    text-align: center;\n    width: 200px;\n    overflow-wrap: normal; }\n\n.secondary-highlight {\n  width: 50%;\n  min-width: 0px;\n  max-width: 100px;\n  margin: 2.5px; }\n\n.secondary-highlight img {\n    opacity: 0.5; }\n\n.secondary-highlight div {\n    text-align: center;\n    min-width: 0px;\n    max-width: 100px;\n    overflow-wrap: normal; }\n\n@media screen and (min-width: 1201px) {\n    .secondary-highlight {\n      font-size: 0.5em; } }\n\n@media screen and (max-width: 1200px) {\n    .secondary-highlight {\n      font-size: 0px; } }\n\n@media screen and (min-width: 901px) {\n    .secondary-highlight img {\n      width: 100%; } }\n\n@media screen and (max-width: 900px) {\n    .secondary-highlight img {\n      width: 0%; } }\n\nbutton {\n  background-color: #ffffff;\n  border-left: none;\n  border-top: none;\n  border-right: none;\n  border-bottom: 1px solid #222222;\n  color: #222222;\n  padding: 10px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-weight: 200;\n  font-size: 0.9em;\n  text-align: center;\n  margin: 0px 2.5px; }\n\nbutton:hover {\n  background-color: #eeeeee; }\n\nbutton:focus {\n  background-color: #eeeeee;\n  outline: none; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/focused-highlights/focused-highlights.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/focused-highlights/focused-highlights.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: FocusedHighlightsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FocusedHighlightsComponent", function() { return FocusedHighlightsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_carousel_highlights_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/carousel-highlights.service */ "./src/app/services/carousel-highlights.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FocusedHighlightsComponent = /** @class */ (function () {
+    function FocusedHighlightsComponent(highlights) {
+        this.highlights = highlights;
+        this.highlightIndex = 0;
+        this.carouselHighlights = [];
+    }
+    FocusedHighlightsComponent.prototype.ngOnInit = function () {
+        this.carouselHighlights = this.highlights.pageImageHighlights[this.carouselName];
+        this.highlightIndex = Math.floor(this.carouselHighlights.length / 2) - 1;
+        this.displayNextHighlight();
+    };
+    FocusedHighlightsComponent.prototype.incrementHighlightIndex = function (highlightIndex) {
+        var incrementedIndex = highlightIndex + 1;
+        if (incrementedIndex > this.carouselHighlights.length - 1) {
+            incrementedIndex = 0;
+        }
+        return incrementedIndex;
+    };
+    FocusedHighlightsComponent.prototype.decrimentHighlightIndex = function (highlightIndex) {
+        var decrimentIndex = highlightIndex - 1;
+        if (decrimentIndex < 0) {
+            decrimentIndex = this.carouselHighlights.length - 1;
+        }
+        return decrimentIndex;
+    };
+    FocusedHighlightsComponent.prototype.displayNextHighlight = function () {
+        this.highlightIndex = this.incrementHighlightIndex(this.highlightIndex);
+        this.leftHighlights = this.carouselHighlights.slice(0, this.highlightIndex);
+        this.rightHighlights = this.carouselHighlights.slice(this.highlightIndex + 1);
+        this.selectedHighlight = this.carouselHighlights[this.highlightIndex];
+    };
+    FocusedHighlightsComponent.prototype.displayPreviousHighlight = function () {
+        this.highlightIndex = this.decrimentHighlightIndex(this.highlightIndex);
+        this.leftHighlights = this.carouselHighlights.slice(0, this.highlightIndex);
+        this.rightHighlights = this.carouselHighlights.slice(this.highlightIndex + 1);
+        this.selectedHighlight = this.carouselHighlights[this.highlightIndex];
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], FocusedHighlightsComponent.prototype, "carouselName", void 0);
+    FocusedHighlightsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-focused-highlights',
+            template: __webpack_require__(/*! ./focused-highlights.component.html */ "./src/app/components/focused-highlights/focused-highlights.component.html"),
+            styles: [__webpack_require__(/*! ./focused-highlights.component.scss */ "./src/app/components/focused-highlights/focused-highlights.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_carousel_highlights_service__WEBPACK_IMPORTED_MODULE_1__["CarouselHighlightsService"]])
+    ], FocusedHighlightsComponent);
+    return FocusedHighlightsComponent;
 }());
 
 
@@ -498,7 +678,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<div class=\"desktop-half-container centred-container mobile-nine-tenths-container\">We are experts in:</div>\n<br>\n<div class=\"mobile-half-container desktop-half-container centred-container\">\n        <app-carousel-highlights [carouselName]=\"'homePage'\" [carouselTitle]=\"'We are experts in:'\"></app-carousel-highlights>\n</div>\n"
+module.exports = "<br>\n<div class=\"desktop-half-container centred-container mobile-nine-tenths-container\">We are experts in:</div>\n<br>\n<div class=\"mobile-half-container desktop-half-container centred-container\">\n        <app-carousel-highlights [carouselName]=\"'homePage'\" [carouselTitle]=\"'We are experts in:'\"></app-carousel-highlights>\n</div>\n\n<br><br>\n<div class=\"line-break centred-container desktop-two-third-container mobile-nine-tenths-container\"></div>\n<br><br>\n\n<div class=\"mobile-half-container desktop-half-container centred-container\">\n                <app-focused-highlights [carouselName]=\"'homePage'\"></app-focused-highlights>\n</div>\n\n<br><br>\n<div class=\"line-break centred-container desktop-two-third-container mobile-nine-tenths-container\"></div>\n<br><br>\n\n"
 
 /***/ }),
 
@@ -561,7 +741,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<br>\n<br>\n<div class=\"mobile-nine-tenths-container desktop-third-container centred-container description\">\n        Hapax Legomenon - A word that only occurs once within a body text.\n        We specialise in building the hapax legomena of software. We do this\n        by turning your unique ideas into bespoke solutions.\n</div>\n<br>\n<br>\n<br>\n<div class=\"line-break centred-container desktop-two-third-container mobile-nine-tenths-container\"></div>\n<br>\n<br>\n<br>\n"
+module.exports = "<br>\n<br>\n<br>\n<div class=\"mobile-nine-tenths-container desktop-third-container centred-container description\">\n        Hapax Legomenon - A word that only occurs once within a body text.\n        We specialise in building the hapax legomena of software. We do this\n        by turning your unique ideas into bespoke solutions.\n</div>\n<br>\n<br>\n<br>\n<div class=\"line-break centred-container desktop-two-third-container mobile-nine-tenths-container\"></div>\n<br>\n<br>\n<br>\n<div class=\"desktop-two-third-container mobile-nine-tenths-container centred-container\">\n        <h1>See if we can help?</h1>\n        <app-ask-us-search></app-ask-us-search>\n</div>\n"
 
 /***/ }),
 
@@ -663,6 +843,64 @@ var ProjectsPageComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ProjectsPageComponent);
     return ProjectsPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/ask-us-search.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/services/ask-us-search.service.ts ***!
+  \***************************************************/
+/*! exports provided: AskUsSearchService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AskUsSearchService", function() { return AskUsSearchService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AskUsSearchService = /** @class */ (function () {
+    function AskUsSearchService() {
+        this.exampleQueries = [
+            'What are my options when it comes to ad revenue?',
+            'How would i go about building a CRM Chatbot?',
+            'What frameworks can i use to build a website?',
+            'How can i leverage A.I. accross my business?',
+            'How can i better understand the needs of my customers?',
+            'How can i run analytics across a natural language dataset',
+            'What is Natural Language Processing?',
+            'How can i leverage Natural Language Processing across my business?',
+            'Is there a more adaptable way of managing projects?',
+            'How can i integrate analytics frameworks into my project?',
+            'What are my options when it comes to analytics?',
+            'Can you help conduct research on Data Privacy?',
+            'How can i benefit from Open Source Software',
+            'How can my business be Open Source?',
+            'How will Open Source help my business?',
+            'How can i best store data for my business?',
+        ];
+    }
+    AskUsSearchService.prototype.getRandomQuery = function () {
+        return this.exampleQueries[Math.floor(Math.random() * this.exampleQueries.length)];
+    };
+    AskUsSearchService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], AskUsSearchService);
+    return AskUsSearchService;
 }());
 
 
