@@ -17,10 +17,11 @@ export class AskUsSearchService {
     'Is there a more adaptable way of managing projects?',
     'How can i integrate analytics frameworks into my project?',
     'What are my options when it comes to analytics?',
-    'Can you help me with a research project?',
+    'Can you help conduct research on Data Privacy?',
     'How can i benefit from Open Source Software',
     'How can my business be Open Source?',
-    'How will Open Source help my business?'
+    'How will Open Source help my business?',
+    'How can i best store data for my business?',
   ]
 
   constructor() { }
