@@ -1,34 +1,32 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CarouselHighlightsService } from '../../services/carousel-highlights.service';
 import { ImageObject } from '../../classes/image-object';
+import { CarouselHighlightsService } from '../../services/carousel-highlights.service';
 
 @Component({
-  selector: 'app-carousel-highlights',
-  templateUrl: './carousel-highlights.component.html',
-  styleUrls: ['./carousel-highlights.component.scss']
+  selector: 'app-focused-highlights',
+  templateUrl: './focused-highlights.component.html',
+  styleUrls: ['./focused-highlights.component.scss']
 })
-export class CarouselHighlightsComponent implements OnInit {
+export class FocusedHighlightsComponent implements OnInit {
 
   @Input() carouselName : string;
-  @Input() carouselTitle : string;
+
+
+  public selectedHighlight : ImageObject;
+  public leftHighlights : Array<ImageObject>;
+  public rightHighlights : Array<ImageObject>;
 
   private highlightIndex : number = 0;
 
   private carouselHighlights : Array<ImageObject> = []
 
-  public primaryHighlight : ImageObject;
-  public leftSecondaryHighlight : ImageObject;
-  public rightSecondaryHighlight : ImageObject;
-
-  constructor(private highlights : CarouselHighlightsService) {
-  }
+  constructor(private highlights : CarouselHighlightsService) { }
 
   ngOnInit() {
     this.carouselHighlights = this.highlights.pageImageHighlights[this.carouselName];
     this.highlightIndex = Math.floor(this.carouselHighlights.length/2) - 1;
     this.displayNextHighlight();
   }
-
 
   public incrementHighlightIndex(highlightIndex : number) {
     let incrementedIndex = highlightIndex + 1;
@@ -47,20 +45,18 @@ export class CarouselHighlightsComponent implements OnInit {
   }
 
   public displayNextHighlight(){
-    this.leftSecondaryHighlight = this.carouselHighlights[this.highlightIndex];
-
     this.highlightIndex = this.incrementHighlightIndex(this.highlightIndex);
-    this.primaryHighlight = this.carouselHighlights[this.highlightIndex];
-
-    this.rightSecondaryHighlight = this.carouselHighlights[this.incrementHighlightIndex(this.highlightIndex)];
+    this.leftHighlights = this.carouselHighlights.slice(0,this.highlightIndex);
+    this.rightHighlights = this.carouselHighlights.slice(this.highlightIndex+1);
+    this.selectedHighlight = this.carouselHighlights[this.highlightIndex];
   }
 
   public displayPreviousHighlight(){
-    this.rightSecondaryHighlight = this.carouselHighlights[this.highlightIndex];
-
     this.highlightIndex = this.decrimentHighlightIndex(this.highlightIndex);
-    this.primaryHighlight = this.carouselHighlights[this.highlightIndex];
-
-    this.leftSecondaryHighlight = this.carouselHighlights[this.decrimentHighlightIndex(this.highlightIndex)];
+    this.leftHighlights = this.carouselHighlights.slice(0,this.highlightIndex);
+    this.rightHighlights = this.carouselHighlights.slice(this.highlightIndex+1);
+    this.selectedHighlight = this.carouselHighlights[this.highlightIndex];
   }
+
+
 }

@@ -20,13 +20,32 @@ h1 {
     font-size: 2em;
     font-weight: 200;
 }
-
 h2 {
     font-size: 1em;
     font-weight: 200;
 }
 
-div.nav-bar {
+.search {
+    border:none;
+    border-bottom: 1px solid #222222;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 20;
+    padding: 5px 0px;
+}
+@media screen and (min-width: 1301px){
+    .search{font-size: 2em;}
+}
+@media screen and (max-width: 1300px) and (min-width: 901px){
+    .search{font-size: 1.5em;}
+}
+@media screen and (max-width: 900px){
+    .search{font-size: 0.8em;}
+}
+
+.search:focus{outline: none;}
+
+.nav-bar {
     width: 100%;
     background: #ffffff;
     display: flex;
@@ -34,7 +53,6 @@ div.nav-bar {
     align-items: center;
     justify-content: center;
 }
-
 .nav-bar-item {
     padding: 5px;
     margin: 0px 5px;
@@ -58,11 +76,7 @@ div.nav-bar {
     text-align: center;
     margin: 0px 2.5px;
 }
-
-.nav-button:hover {
-    background-color: #eeeeee;
-}
-
+.nav-button:hover {background-color: #eeeeee;}
 .nav-button:focus {
     background-color: #eeeeee;
     outline: none;

@@ -10,6 +10,9 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselHighlightsComponent } from './components/carousel-highlights/carousel-highlights.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FocusedHighlightsComponent } from './components/focused-highlights/focused-highlights.component';
+import { AskUsSearchComponent } from './components/ask-us-search/ask-us-search.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const appRoutes: Routes = [
   { path: '',         component: HomePageComponent      },
@@ -28,13 +31,16 @@ const appRoutes: Routes = [
     AboutPageComponent,
     CarouselHighlightsComponent,
     FooterComponent,
+    FocusedHighlightsComponent,
+    AskUsSearchComponent,
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
