@@ -16,7 +16,11 @@ export class AskUsSearchService {
     'How can i leverage Natural Language Processing across my business?',
     'Is there a more adaptable way of managing projects?',
     'How can i integrate analytics frameworks into my project?',
-    'What are my options when it comes to analytics?'
+    'What are my options when it comes to analytics?',
+    'Can you help me with a research project?',
+    'How can i benefit from Open Source Software',
+    'How can my business be Open Source?',
+    'How will Open Source help my business?'
   ]
 
   constructor() { }
