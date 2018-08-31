@@ -126,3 +126,13 @@ div.nav-bar {
 .centred-container {
     margin: 0px auto;
 }
+
+.description {
+    letter-spacing: 0.75px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.line-break {
+    border-bottom: 1px solid #222222;
+}

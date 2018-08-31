@@ -9,6 +9,7 @@ import { ProjectsPageComponent } from './pages/projects-page/projects-page.compo
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselHighlightsComponent } from './components/carousel-highlights/carousel-highlights.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '',         component: HomePageComponent      },
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     ProjectsPageComponent,
     AboutPageComponent,
     CarouselHighlightsComponent,
+    FooterComponent,
   ],
   imports: [
     RouterModule.forRoot(
