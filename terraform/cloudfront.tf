@@ -3,7 +3,7 @@
 
     origin {
         origin_id   = "origin-${local.domain}"
-        domain_name = aws_s3_bucket.moistsquid.website_endpoint
+        domain_name = aws_s3_bucket.hapax.website_endpoint
 
         custom_origin_config {
         origin_protocol_policy = "http-only"
