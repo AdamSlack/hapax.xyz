@@ -18,7 +18,7 @@ const ProjectPreview = ({className, ...props}) => {
     return (
         <li className={`project-preview ${className}`}>
             <div className="project-image">
-                <img src={imgSrc} alt={`Image: ${name}`} />
+                <img src={imgSrc} alt={`${name}`} />
             </div>
             <div className="project-summary">
                 <h2>
