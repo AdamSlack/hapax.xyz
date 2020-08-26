@@ -1,28 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
 :root {
-  --colour-blue: #93D4F0;
-  --colour-light-blue: #D3EFFD;
-  --colour-grey: #999999;
-  --colour-black: #1B1E1D;
+  --background-colour: #282a36;
+  --background-lighter-colour: #383a59;
+  --current-line-colour: #44475a;
+  --foreground-colour: #f8f8f2;
+  --comment-colour: #6272a4;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purlple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
 }
 
-body {
+html, body {
+  background-color: var(--background-colour);
+  color: var(--foreground-colour);
   margin: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Fira Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 
 /* Target blank icon */
 /* https://codepen.io/thiagobraga/pen/bhDdn */
 a[target="_blank"]:after {
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin: 0 3px 0 5px
+  margin: 0 3px 0 5px;
+}
+a {
+  text-decoration: none;
+  color: var(--foreground-colour);
+}
+
+a:hover, a:hover:visited {
+    color: var(--cyan);
+    border-radius: 1em;
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--foreground-colour);
+
 }
