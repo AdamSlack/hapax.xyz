@@ -3,13 +3,13 @@ import './ProjectPreview.css'
 
 const getSiteLinkAnchor = (link) => {
     if(link) {
-        return (<a href={link} target="_blank">View Site</a>)
+        return (<a href={link} target="_blank" rel="noopener noreferrer">View Site</a>)
     }
 }
 
 const getRepoLinkAnchor = (repoLink) => {
     if(repoLink) {
-        return (<a href={repoLink} target="_blank">View on GitHub</a>)
+        return (<a href={repoLink} target="_blank" rel="noopener noreferrer">View on GitHub</a>)
     }
 }
 
