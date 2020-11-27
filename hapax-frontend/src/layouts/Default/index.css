@@ -16,7 +16,6 @@
   width: 250px
 }
 
-/* The navigation menu links */
 .defaultLayout.sideNav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -26,12 +25,10 @@
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .defaultLayout.sideNav a:hover {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
 .defaultLayout.sideNav .closeBtn {
   position: absolute;
   top: 0;
@@ -40,7 +37,6 @@
   margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 .defaultLayout.main {
   transition: margin-left .5s;
   margin-left: 0;
@@ -51,7 +47,6 @@
   margin-left: 250px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .defaultLayout.sideNav {padding-top: 15px;}
   .defaultLayout.sideNav a {font-size: 18px;}

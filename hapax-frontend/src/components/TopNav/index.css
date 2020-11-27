@@ -14,3 +14,11 @@ nav div a {
 nav div a:visited {
   color: inherit;
 }
+
+nav button.menu {
+  background: none;
+}
+
+nav div button.menu:hover div {
+  background-color: #333;
+}

@@ -8,9 +8,9 @@ export const TopNav = ( props ) => {
   return (
     <nav>
       <div onClick={handleOpen}>
-        <a>
+        <button className="menu">
           <BurgerIcon />
-        </a>
+        </button>
       </div>
       <div>
         <Link to="/">

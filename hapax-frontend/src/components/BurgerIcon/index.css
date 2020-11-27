@@ -4,4 +4,5 @@ div.burgerIcon {
   background-color: #222;
   margin: 3px 0;
   border-radius: 50px;
+  transition: 0.3s;
 }
