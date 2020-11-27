@@ -6,6 +6,28 @@ resource "aws_s3_bucket" "hapax" {
     website {
         index_document = "index.html"
         error_document = "error.html"
+            routing_rules = <<EOF
+[
+    {
+        "Condition": {
+            "HttpErrorCodeReturnedEquals": "404"
+        },
+        "Redirect": {
+            "HostName": "hapax.xyz",
+            "ReplaceKeyPrefixWith": "#!/"
+        }
+    },
+    {
+        "Condition": {
+            "HttpErrorCodeReturnedEquals": "403"
+        },
+        "Redirect": {
+            "HostName": "hapax.xyz",
+            "ReplaceKeyPrefixWith": "#!/"
+        }
+    }
+]
+EOF
     }
 
     force_destroy = false

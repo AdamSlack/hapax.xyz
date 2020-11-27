@@ -1,12 +1,28 @@
-import React from 'react';
-import HomePage from './pages/HomePage/HomePage';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import './App.css';
+import HomePage from './components/HomePage';
+import Post from './components/Post';
+import DefaultLayout from './layouts/Default';
 
-function App(foo) {
+function App() {
   return (
-   <div>
-     <HomePage></HomePage>
-   </div>
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/posts/:postId">
+            <DefaultLayout>
+              <Post />
+            </DefaultLayout>
+          </Route>
+          <Route path="/">
+            <DefaultLayout>
+              <HomePage />
+            </DefaultLayout>
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
-export default App
+export default App;
