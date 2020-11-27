@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserHistory } from 'history';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const history = createBrowserHistory();
+
+let app = document.getElementById('root');
+if (app) {
+	const path = (/#!(\/.*)$/.exec(window.location.hash) || [])[1];
+	if (path) {
+		history.replace(path);
+	}
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
