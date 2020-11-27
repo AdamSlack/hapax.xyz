@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "hapax" {
         },
         "Redirect": {
             "HostName": "hapax.xyz",
-            "ReplaceKeyPrefixWith": "#!"
+            "ReplaceKeyPrefixWith": "#!/"
         }
     },
     {
@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "hapax" {
         },
         "Redirect": {
             "HostName": "hapax.xyz",
-            "ReplaceKeyPrefixWith": "#!"
+            "ReplaceKeyPrefixWith": "#!/"
         }
     }
 ]
