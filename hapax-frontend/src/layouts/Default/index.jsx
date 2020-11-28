@@ -19,12 +19,14 @@ export const DefaultLayout = (props) => {
   return (
     <div>
       <SideNav 
-        className={`defaultLayout sideNav ${isOpen && 'openNav'}`}
+        className={`defaultLayout ${isOpen && 'openNav'}`}
         handleClose={closeNav}
       /> 
       <TopNav handleOpen={openNav}/>
       <div className={`defaultLayout main ${isOpen && 'openNav'}`}>
-        { children }
+        <div id="content">
+          { children }
+        </div>
       </div>
     </div>
   )

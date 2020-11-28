@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import './index.css'
+import CodeBlock from '../CodeBlock'
 
 export const Post = () => {
   const { postId } = useParams()
@@ -18,9 +20,8 @@ export const Post = () => {
   }, [postId])
 
   return (
-    <div>
-      <h2>Post: {postId}</h2>
-  <ReactMarkdown>{postData}</ReactMarkdown>
+    <div id="post-content">
+      <ReactMarkdown renderers={ { code: CodeBlock }}>{postData}</ReactMarkdown>
     </div>
   )
 }

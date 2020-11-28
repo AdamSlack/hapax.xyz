@@ -5,9 +5,11 @@ export const BurgerIcon = () => {
 
   return (
     <>
-      <div className="burgerIcon" />
-      <div className="burgerIcon" />
-      <div className="burgerIcon" />
+      <div className="burgerIcon">
+        <div className="burgerIconSlice" />
+        <div className="burgerIconSlice" />
+        <div className="burgerIconSlice" />
+      </div>
     </>
   )
 }

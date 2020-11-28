@@ -17,6 +17,11 @@ export const TopNav = ( props ) => {
           Hapax.xyz
         </Link>
       </div>
+      <div>
+        <Link to="/posts">
+          Posts
+        </Link>
+      </div>
     </nav>
   )
 }

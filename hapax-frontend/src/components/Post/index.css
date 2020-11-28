@@ -1,0 +1,25 @@
+#post-content p,
+#post-content pre,
+#post-content ul,
+#post-content ol,
+#post-content h1,
+#post-content h2,
+#post-content h3,
+#post-content h4,
+#post-content h5,
+#post-content h6 {
+  margin-bottom: 1em;
+}
+
+#post-content li {
+  margin-bottom: 0.5em;
+  list-style-type: disc;
+}
+
+#post-content pre {
+  border-radius: 0.3em;
+}
+
+#post-content li {
+  margin-left: 1em;
+}

@@ -1,0 +1,14 @@
+ul.post-listing li a:visited,
+ul.post-listing li a {
+  color: var(--fg-col);
+  transition: 0.5s;
+}
+
+ul.post-listing li a:hover {
+  color: var(--hover-col);
+}
+
+ul.post-listing li {
+  padding: 0.5em 0em;
+  font-size: 1.5em;
+}

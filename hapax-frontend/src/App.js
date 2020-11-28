@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import Post from './components/Post';
+import PostListing from './components/PostListing';
 import DefaultLayout from './layouts/Default';
 
 function App() {
@@ -12,6 +13,11 @@ function App() {
           <Route path="/posts/:postId">
             <DefaultLayout>
               <Post />
+            </DefaultLayout>
+          </Route>
+          <Route path="/posts">
+            <DefaultLayout>
+              <PostListing />
             </DefaultLayout>
           </Route>
           <Route path="/">
