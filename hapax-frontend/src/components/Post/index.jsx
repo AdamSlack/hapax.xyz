@@ -15,7 +15,6 @@ export const Post = () => {
     .then((md) => md.text())
     .then((data) => {
       setPostData(data)
-      console.log(data);
     })
   }, [postId])
 

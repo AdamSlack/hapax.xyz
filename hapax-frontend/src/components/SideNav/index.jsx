@@ -20,7 +20,13 @@ export const SideNav = (props) => {
       <h2>Posts</h2>
       {
         postTitles.map((postTitle) => (
-          <Link to={`/posts/${postTitle}`} onClick={handleClose}>{postTitle}</Link>
+          <Link
+            to={`/posts/${postTitle}`}
+            onClick={handleClose}
+            key={postTitle}
+          >
+            {postTitle}
+          </Link>
         ))
       }
     </div>
