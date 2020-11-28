@@ -3,7 +3,7 @@ name: 'Pipeline'
 on:
   push:
     branches:
-    - next-js
+    - master
   pull_request:
 
 jobs:
