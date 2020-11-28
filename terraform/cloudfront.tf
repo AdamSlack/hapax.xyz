@@ -49,4 +49,10 @@
         ssl_support_method       = "sni-only"
         minimum_protocol_version = "TLSv1"
     }
+
+    custom_error_response {
+        error_code      = 404
+        response_code   = 200
+        response_page_path = "/index.html"
     }
+}
