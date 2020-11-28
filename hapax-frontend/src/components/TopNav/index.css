@@ -9,6 +9,8 @@ nav div {
 nav div a {
   text-emphasis: none;
   font-size: 1.5em;
+  color: var(--fg-col);
+  transition: 0.5s;
 }
 
 nav div a:visited {
@@ -18,7 +20,10 @@ nav div a:visited {
 nav button.menu {
   background: none;
 }
+nav div a:hover {
+  color: var(--hover-col);
+};
 
 nav div button.menu:hover div {
-  background-color: #333;
+  background-color: var(--hover-col);
 }

@@ -5,6 +5,11 @@ import './index.css'
 export const SideNav = (props) => {
   const { handleClose, className } = props;
 
+  const postTitles = [
+    'HelloWorld',
+    'WhutWhut',
+  ]
+
   return (
     <div className={className}>
       <button className="closeBtn" 
@@ -12,9 +17,11 @@ export const SideNav = (props) => {
       >
         &times;
       </button>
-      <Link to="/posts/testPost1" onClick={handleClose}>Test Post 1</Link>
-      <Link to="/posts/testPost2" onClick={handleClose}>Test Post 2</Link>
-      <Link to="/posts/testPost3" onClick={handleClose}>Test Post 3</Link>
+      {
+        postTitles.map((postTitle) => (
+        <Link to={`/posts/${postTitle}`} onClick={handleClose}>{postTitle}</Link>
+        ))
+      }
     </div>
   )
 }
