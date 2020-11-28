@@ -9,12 +9,11 @@ const CodeBlock = (props) => {
     { length: numberOfLines }, 
     (_, idx) => idx + 1,
   )
-  console.log(value)
   return (
     <div className="codeContainer">
       <div>
         <ul className="codeLineNumbers">
-          {lineNumbers.map((lineNumber) => <li>{lineNumber}</li>)}
+          {lineNumbers.map((lineNumber) => <li key={lineNumber}>{lineNumber}</li>)}
         </ul>
       </div>
       <SyntaxHighlighter language={language} style={style}>

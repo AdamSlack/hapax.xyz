@@ -11,6 +11,10 @@
   margin-bottom: 1em;
 }
 
+#post-content p {
+  font-size: 1.3em;
+}
+
 #post-content li {
   margin-bottom: 0.5em;
   list-style-type: disc;
@@ -18,7 +22,6 @@
 
 #post-content pre {
   border-radius: 0em 1em 1em 0em;
-  font-weight: bolder;
   width: 100%;
   background-color: var(--fg-col) !important;
 }
@@ -39,6 +42,9 @@
   border-radius:  0.5em 0em 0em 0.5em;
   background-color: var(--fg-col);
   line-height: 1.5em;  
+  text-align: end;
+  font-size: 1em;
+  font-family: monospace;
 }
 
 #post-content div.codeContainer {
