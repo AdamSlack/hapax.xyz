@@ -1,6 +1,6 @@
 import React from "react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dracula  as style } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { sunburst as style } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeBlock = (props) => {
   const { language, value } = props;
