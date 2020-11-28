@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
 
 export const Post = () => {
   const { postId } = useParams()
 
+  const [postData, setPostData] = useState('')
+
+  useEffect(() => {
+    const url = `https://hapax.xyz/markdown-posts/${postId}.md`
+    fetch(url)
+    .then((md) => md.blob())
+    .then((data) => {
+      setPostData(data)
+      console.log(data);
+    })
+  }, [postId])
+
   return (
     <div>
       <h2>Post: {postId}</h2>
+  <ReactMarkdown>{postData}</ReactMarkdown>
     </div>
   )
 }
