@@ -72,4 +72,4 @@ jobs:
       - name: Copy Site Files to S3
         run: |
           aws s3 sync ./hapax-frontend/build s3://hapax.xyz
-          aws s3 sync ./posts s3://hapax.xyz/posts
+          aws s3 sync ./markdown-posts s3://hapax.xyz/markdown-posts
