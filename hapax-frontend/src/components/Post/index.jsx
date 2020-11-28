@@ -10,7 +10,7 @@ export const Post = () => {
   useEffect(() => {
     const url = `https://hapax.xyz/markdown-posts/${postId}.md`
     fetch(url)
-    .then((md) => md.blob())
+    .then((md) => md.text())
     .then((data) => {
       setPostData(data)
       console.log(data);
