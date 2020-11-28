@@ -16,8 +16,8 @@ html, body, #root {
   height: 100%;
   background-color: var(--bg-col);
   color: var(--fg-col);
-  --bg-col: #24292e;
-  --fg-col: #fafbfc;
+  --fg-col: #24292e;
+  --bg-col: #fafbfc;
   --hover-col: #818181;
 }
 
