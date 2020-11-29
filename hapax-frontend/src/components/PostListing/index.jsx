@@ -13,7 +13,7 @@ export const PostListing = () => {
     <>
       <h1>Posts</h1>
       <ul className='post-listing'>
-        {posts.map(({key, title}) => (
+        {posts.map(({key, title, subtitle}) => (
           <li key={key}>
             <Link to={`/posts/${key}`}>{title}: {subtitle}</Link>
           </li>
