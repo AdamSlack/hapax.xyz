@@ -5,10 +5,12 @@ import './index.css'
 export const SideNav = (props) => {
   const { handleClose, className } = props;
 
-  const postTitles = [
-    'HelloWorld',
-    'WhutWhut',
+  const posts = [
+    { title: 'Middy Morphisms', subtitle: 'Lambda Body Transforms', key: 'MiddyMorphisms' },
+    { title: 'Hello World', subtitle: 'Test Hello World markdown file', key: 'HelloWorld' },
+    { title: 'Whut Whut', subtitle: 'Another test markdown file', key: 'WhutWhut' }
   ]
+
 
   return (
     <div className={`${className} sideNav`}>
@@ -19,13 +21,13 @@ export const SideNav = (props) => {
       </button>
       <h2>Posts</h2>
       {
-        postTitles.map((postTitle) => (
+        posts.map(({title, key}) => (
           <Link
-            to={`/posts/${postTitle}`}
+            to={`/posts/${key}`}
             onClick={handleClose}
-            key={postTitle}
+            key={key}
           >
-            {postTitle}
+            {title}
           </Link>
         ))
       }

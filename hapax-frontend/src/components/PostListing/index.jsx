@@ -4,17 +4,18 @@ import './index.css'
 
 export const PostListing = () => {
   const posts = [
-    { "title": "Hello World", "key": "HelloWorld" },
-    { "title": "Whut Whut", "key": "WhutWhut" }
+    { title: 'Middy Morphisms', subtitle: 'Lambda Body Transforms', key: 'MiddyMorphisms' },
+    { title: 'Hello World', subtitle: 'Test Hello World markdown file', key: 'HelloWorld' },
+    { title: 'Whut Whut', subtitle: 'Another test markdown file', key: 'WhutWhut' }
   ]
 
   return (
     <>
       <h1>Posts</h1>
-      <ul className="post-listing">
+      <ul className='post-listing'>
         {posts.map(({key, title}) => (
           <li key={key}>
-            <Link to={`/posts/${key}`}>{title}</Link>
+            <Link to={`/posts/${key}`}>{title}: {subtitle}</Link>
           </li>
         ))}
       </ul>
