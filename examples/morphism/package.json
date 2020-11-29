@@ -1,0 +1,19 @@
+{
+  "name": "morphism-example",
+  "version": "1.0.0",
+  "description": "example code for the 'Middy Morphisms' post",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "jest ."
+  },
+  "dependencies": {
+    "@middy/core": "^1.4.0",
+    "axios": "^0.21.0",
+    "morphism": "^1.12.3"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
