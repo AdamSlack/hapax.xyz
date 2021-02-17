@@ -1,6 +1,6 @@
 # hapax.xyz
 
-Personal Site, frequently changes, currently serves as a means of sharing markdown posts.
+Personal Site mostly for messing about with stuff, frequently changes, currently serves as a means of sharing markdown posts.
 
 ## Posts
 
