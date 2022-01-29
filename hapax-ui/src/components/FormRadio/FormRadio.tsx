@@ -1,4 +1,4 @@
-import { Radio, SimpleColors, Text, TextProps } from "@nextui-org/react"
+import { Grid, Radio, SimpleColors, Text, TextProps } from "@nextui-org/react"
 import { RadioProps } from "@nextui-org/react/esm/radio/radio";
 import { Controller, RegisterOptions, useFormContext } from "react-hook-form"
 
@@ -15,24 +15,39 @@ export type FormRadioProps = {
 }
 
 export const FormRadio = (props: FormRadioProps) => {
-  const { options, name, rules, label, radioProps, labelProps } = props;
-
+  const { options, name, rules, label, radioProps, labelProps, color } = props;
   const formContext = useFormContext()
-
   return (
     <Controller
       name={name}
       rules={rules}
       control={formContext.control}
-      render={({ field }) => (
-        <>
-          <Text size={25} { ...labelProps } >{label}</Text>
-          <Radio.Group onChange={field.onChange}>
-            {options.map(({label, ...optionProps}) => (
-              <Radio {...radioProps} {...optionProps} key={optionProps.value}>{label}</Radio>
+      render={({ field, fieldState: { error } }) => (
+        <Grid.Container>
+          <Grid xs={12}>
+            <Text
+              size={25}
+              { ...labelProps }
+              color={!error ? (labelProps?.color || color) : 'error' }
+            >
+              {label}
+            </Text>
+          </Grid>
+          <Grid xs={12}>
+            <Radio.Group onChange={field.onChange}>
+              {options.map(({label, ...optionProps}) => (
+                <Radio
+                  {...radioProps}
+                  {...optionProps}
+                  key={optionProps.value}
+                  color={color || radioProps?.color || optionProps.color}
+                >
+                  {label}
+                </Radio>
               ))}
-          </Radio.Group>
-        </>
+            </Radio.Group>
+          </Grid>
+        </Grid.Container>
       )}
     />
   )

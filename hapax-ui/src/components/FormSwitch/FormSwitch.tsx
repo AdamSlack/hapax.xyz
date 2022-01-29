@@ -1,4 +1,4 @@
-import { SimpleColors, Switch, Text, SwitchProps, TextProps } from "@nextui-org/react"
+import { SimpleColors, Switch, Text, SwitchProps, TextProps, Grid } from "@nextui-org/react"
 import { Controller, RegisterOptions, useFormContext } from "react-hook-form"
 
 export type FormSwitchProps = {
@@ -21,16 +21,20 @@ export const FormSwitch = (props: FormSwitchProps) => {
       control={formContext.control}
       rules={rules}
       render={({ field }) => (
-        <>
-          <Text size={25} { ...labelProps} color={color} >
-            {label}
-          </Text>
-          <Switch
-            {...switchProps}
-            onChange={(event) => field.onChange(event.target.checked)}
-            color={color || switchProps?.color}
-          />
-        </>
+        <Grid.Container>
+          <Grid xs={12}>
+            <Text size={25} { ...labelProps} color={color} span>
+              {label}
+            </Text>
+          </Grid>
+          <Grid xs={12}>
+            <Switch
+              {...switchProps}
+              onChange={(event) => field.onChange(event.target.checked)}
+              color={color || switchProps?.color}
+            />
+          </Grid>
+        </Grid.Container>
       )}
     />
   )

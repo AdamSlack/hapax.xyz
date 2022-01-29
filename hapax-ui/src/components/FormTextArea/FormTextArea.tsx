@@ -1,12 +1,13 @@
-import { Grid, Input, InputProps } from "@nextui-org/react";
+import { Grid, Textarea } from "@nextui-org/react";
+import { TextareaProps } from "@nextui-org/react/esm/textarea";
 import { Controller, useFormContext, RegisterOptions } from "react-hook-form"
 
-export type FormInputProps = {
+export type FormTextAreaProps = {
   name: string;
   rules?: RegisterOptions,
-} & Partial<InputProps>;
+} & Partial<TextareaProps>;
 
-export const FormInput = (props: FormInputProps) => {
+export const FormTextArea = (props: FormTextAreaProps) => {
   const { name, label, rules, ...inputProps } = props;
 
   const formContext = useFormContext();  
@@ -19,7 +20,7 @@ export const FormInput = (props: FormInputProps) => {
       render={({field, fieldState: { error } }) => (
         <Grid.Container>
           <Grid xs={12}>
-            <Input
+            <Textarea
               onChange={field.onChange}
               labelPlaceholder={!error ? label : `${label} ${error.type}`}
               {...inputProps}
@@ -32,4 +33,4 @@ export const FormInput = (props: FormInputProps) => {
   )
 }
 
-export default FormInput;
+export default FormTextArea;
