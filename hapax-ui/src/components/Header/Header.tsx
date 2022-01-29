@@ -8,6 +8,7 @@ export type HeaderProps = {
 }
 
 export const GRID_TEXT_GRADIENT = '45deg, #AAFFEC -77%, #ff4ecd 20%, #0070F3 120%';
+export const GRID_TEXT_HOVER_GRADIENT = '45deg, #88ddba -77%, #dd1ba9 20%, #0050d1 120%';
 export const TEXT_GRADIENT = '90deg, #AAFFEC -20%, #ff4ecd 0%, #0070F3 20%';
 
 export const Header = (props: HeaderProps) => {
@@ -42,6 +43,16 @@ export const Header = (props: HeaderProps) => {
             onChange={handleThemeChange}
             iconOn={<BiSun />}
             iconOff={<BiMoon />}
+            css={{
+              color: '$pink600',
+              '[data-state="checked"]': {
+                // background: 'rgb(222,27,233)',
+                background: `linear-gradient(${GRID_TEXT_GRADIENT})`,
+              },
+              '[data-state="checked"]:hover': {
+                background: `linear-gradient(${GRID_TEXT_HOVER_GRADIENT}) !important`
+              }
+            }}
           />
         </Grid>
       </Grid.Container>
