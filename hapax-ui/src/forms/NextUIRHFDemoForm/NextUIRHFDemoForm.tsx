@@ -1,4 +1,4 @@
-import { Button, Grid, Collapse, SimpleColors, Text } from "@nextui-org/react";
+import { Button, Grid, Collapse, SimpleColors, Text, Spacer } from "@nextui-org/react";
 import { FormProvider, RegisterOptions, useForm } from "react-hook-form";
 import { FormCheckbox } from "../../components/FormCheckbox";
 import { FormInput } from "../../components/FormInput";
@@ -86,53 +86,53 @@ export const NextUIRHFDemoForm = () => {
       </Collapse.Group>
       <FormProvider {...formContext}>
         <form onSubmit={formContext.handleSubmit(onSubmit)}>
-          <Grid.Container gap={4}>
-            <Grid xs={12}>
+          <Grid.Container gap={4} justify='space-around'>
+            <Grid xs={9}>
               <Text size={40}>Address</Text>
             </Grid>
-            <Grid xs={12}>
+            <Grid xs={9}>
               <FormInput label="Street" name="address.street" fullWidth rules={requiredRule} {...inputStyles} />
             </Grid>
-
-            <Grid xs={12}>
+            <Grid xs={9}>
               <FormInput label="Town" name="address.town" fullWidth rules={requiredRule} {...inputStyles} />
             </Grid>
-
-            <Grid xs={12}>
+            <Grid xs={9}>
               <FormInput label="City" name="address.city" fullWidth rules={requiredRule} {...inputStyles} />
             </Grid>
-
-            <Grid xs={12}>
+            <Grid xs={9}>
               <FormInput label="Postcode" name="address.postcode" fullWidth rules={requiredRule} {...inputStyles} />
             </Grid>
           </Grid.Container>
 
-          <Grid.Container gap={4}> 
-            <Grid xs={12}>
+          <Grid.Container gap={4} justify='space-around'>
+            <Grid xs={9}>
               <Text size={40}>Pizza</Text>
             </Grid>
-            <Grid xs={6}>
+            </Grid.Container>
+          <Grid.Container gap={4} justify='space-around'>
+
+            <Grid xs={3}>
               <FormCheckbox options={toppingOptions} name='toppings' label="Toppings" />
             </Grid>
 
-            <Grid xs={6}>
+            <Grid xs={3}>
               <FormRadio options={baseOptions} name="toppings-radio" rules={requiredRule} label='Base Style' />
             </Grid>
           </Grid.Container>
 
 
-          <Grid.Container gap={4}> 
-            <Grid xs={12}>
+          <Grid.Container gap={4} justify='space-around'>
+            <Grid xs={9}>
               <FormSwitch name="additional.yes" label="Additional Info?" switchProps={{bordered: true, color: 'success'}}/>
             </Grid>
 
-            <Grid xs={12}>
+            <Grid xs={9}>
               { formContext.watch('additional.yes') && <FormTextArea name="additional.info" label="Additional Information" rules={requiredRule} fullWidth /> }
             </Grid>
           </Grid.Container>
           
-          <Grid.Container gap={4}>
-            <Grid>
+          <Grid.Container gap={4} justify='space-around'>
+            <Grid xs={9}>
               <Button
                 type="submit" 
                 color={inputStyles.color}

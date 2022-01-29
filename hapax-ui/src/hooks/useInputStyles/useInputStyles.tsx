@@ -23,7 +23,7 @@ export const useInputStyles = () => {
   const [shadow, setShadow] = useState<boolean>(false);
   
   const StyleButtonGroup = () => (
-    <Button.Group>
+    <Button.Group css={{overflow: 'auto'}}>
       {inputStyles.map((style) => (
         <Button onClick={() => setInputStyle(style)} disabled={inputStyle === style} key={`style-${style || 'default'}`}>{style || 'default'}</Button>
       ))}
@@ -31,7 +31,7 @@ export const useInputStyles = () => {
   )
 
   const ColorButtonGroup = () => (
-    <Button.Group>
+    <Button.Group css={{overflow: 'auto'}}>
       {simpleColors.map((simpleColor) => (
         <Button onClick={() => setColor(simpleColor)} disabled={color === simpleColor} key={`color-${simpleColor}`}>{simpleColor}</Button>
       ))}
@@ -39,7 +39,7 @@ export const useInputStyles = () => {
   )
 
   const StatusButtonGroup = () => (
-    <Button.Group>
+    <Button.Group css={{overflow: 'auto'}}>
       {simpleColors.map((simpleColor) => (
         <Button onClick={() => setStatus(simpleColor)} disabled={status === simpleColor} key={`status-${simpleColor}`}>{simpleColor}</Button>
       ))}
