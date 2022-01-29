@@ -9,6 +9,8 @@ const darkTheme = createTheme({
   type: 'dark',
 })
 
+export type SetTheme = React.Dispatch<React.SetStateAction<ThemeType>>;
+
 export const useTheme = () => {
   const [ theme, setTheme ] = useState<ThemeType>('dark');
 
