@@ -1,9 +1,0 @@
-button.closeBtn {
-  background: none;
-  color: var(--bg-col);
-  transition: 0.2s; 
-}
-
-button.closeBtn:hover {
-  color: var(--hover-col);
-}
