@@ -1,7 +1,10 @@
-import { Grid, Link, Switch, SwitchEvent, Text } from '@nextui-org/react';
+import { Link as RouterLink } from 'react-router-dom'
+import { Grid, Link, Switch, SwitchEvent, Text, Divider } from '@nextui-org/react';
 import { BiSun, BiMoon } from 'react-icons/bi'
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 
 import { SetTheme } from "../../hooks/useTheme";
+import { GITHUB_URL, LINKEDIN_URL } from '../../consts/links';
 
 export type HeaderProps = {
   onThemeChange: SetTheme
@@ -22,16 +25,45 @@ export const Header = (props: HeaderProps) => {
   return (
     <nav>
       <Grid.Container justify='space-between' gap={1} alignItems='center'>
-        <Grid>
-          <Link>
+        <Grid md={9} sm={8} xs={6}>
+          <RouterLink to='/home'>
             <Text
-              h1
+              weight='bold'
               size={40}
               css={{
                 textGradient: GRID_TEXT_GRADIENT,
               }}
             >
               Hapax.xyz
+            </Text>
+          </RouterLink>
+        </Grid>
+        
+        <Grid>
+          <RouterLink to='/home'>
+            <Text>Home</Text>
+          </RouterLink>
+        </Grid>
+        <Grid>
+          <RouterLink to='/next-ui-react-hook-form-demo'>
+            <Text>NextUI + RHF</Text>
+          </RouterLink>
+        </Grid>
+        <Grid>
+          <Link href={LINKEDIN_URL} target='_blank'>
+            <Text
+              size={25}
+            >
+              <SiLinkedin/>
+            </Text>
+          </Link>
+        </Grid>
+        <Grid>
+          <Link href={GITHUB_URL} target='_blank'>
+            <Text
+              size={25}
+            >
+              <SiGithub/>
             </Text>
           </Link>
         </Grid>
@@ -56,6 +88,7 @@ export const Header = (props: HeaderProps) => {
           />
         </Grid>
       </Grid.Container>
+      <Divider />
     </nav>
   )
 }

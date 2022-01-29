@@ -1,7 +1,14 @@
 import { NextUIProvider } from '@nextui-org/react';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { PizzaForm } from './forms/PizzaForm';
 import { useTheme } from './hooks/useTheme'
+import { NextUIRHFDemoPage, HomePage } from './pages';
+
+import './App.css'
 
 function App() {
   const {theme, setTheme } = useTheme();
@@ -9,7 +16,14 @@ function App() {
   return (
     <NextUIProvider theme={theme}>
       <Header onThemeChange={setTheme}/>
-      <PizzaForm />
+      <div className="content">
+        <Routes>
+          <Route path='/' element={<HomePage />} /> 
+          <Route path='/home' element={<HomePage />} /> 
+          <Route path='/next-ui-react-hook-form-demo' element={<NextUIRHFDemoPage />} /> 
+        </Routes>
+        </div>
+      <Footer />
     </NextUIProvider>
   );
 }

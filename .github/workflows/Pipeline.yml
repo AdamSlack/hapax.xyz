@@ -67,9 +67,9 @@ jobs:
         run: |
           npm install
           npm run build
-        working-directory: ./hapax-frontend
+        working-directory: ./hapax-ui
 
       - name: Copy Site Files to S3
         run: |
-          aws s3 sync ./hapax-frontend/build s3://hapax.xyz
+          aws s3 sync ./hapax-ui/build s3://hapax.xyz
           aws s3 sync ./markdown-posts s3://hapax.xyz/markdown-posts
