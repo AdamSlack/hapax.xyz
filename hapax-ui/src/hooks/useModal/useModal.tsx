@@ -9,36 +9,51 @@ export type ModalContent = Record<string, FC>
 
 export type UseModalOptions = {
   selectedModal?: string;
+  showTitle?: boolean
 }
 
-export const useModal = (modalContent: ModalContent, options: UseModalOptions = {}) => {
-  const { selectedModal } = options;
+const defaultModalOptions: UseModalOptions = {
+  selectedModal: undefined,
+  showTitle: true,
+}
+
+
+export const useModal = (modalContent: ModalContent, options: UseModalOptions = defaultModalOptions) => {
+  const { selectedModal, showTitle } = options;
 
   const [modalState, setModalState] = useState<ModalState>({ selectedModal });
 
-  const setSelectedModal = (selectedModal: ModalState['selectedModal']) => setModalState({
-    ...modalState,
-    selectedModal,
-  })
+  const setSelectedModal = (selectedModal: ModalState['selectedModal']) => {
+    console.log(selectedModal)
+    setModalState({
+      ...modalState,
+      selectedModal,
+    })
+  }
+
+  const closeModal = () => setSelectedModal(undefined)
 
   const SelectedComponent = !!modalState.selectedModal ? modalContent[modalState.selectedModal] : () => (<></>)
   const DisplayedModal = () => (
     <Modal
       closeButton
       open={!!modalState.selectedModal}
-      onClose={() => setSelectedModal(undefined)}
+      onClose={closeModal}
     >
-      <Modal.Header>
-        <Text size={25} h2 transform="capitalize">{modalState.selectedModal}</Text>
-      </Modal.Header>
+      {
+        showTitle && <Modal.Header>
+          <Text size={25} h2 transform="capitalize">{modalState.selectedModal}</Text>
+        </Modal.Header>
+      }
       <SelectedComponent />
     </Modal>
   )
 
   return {
     modalState,
+    closeModal,
     setSelectedModal,
-    DisplayedModal
+    Modal: DisplayedModal
   }
 };
 

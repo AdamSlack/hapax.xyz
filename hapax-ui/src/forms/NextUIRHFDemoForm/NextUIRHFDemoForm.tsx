@@ -1,4 +1,4 @@
-import { Button, Grid, Collapse, SimpleColors, Text, Spacer } from "@nextui-org/react";
+import { Button, Grid, Collapse, SimpleColors, Text } from "@nextui-org/react";
 import { FormProvider, RegisterOptions, useForm } from "react-hook-form";
 import { FormCheckbox } from "../../components/FormCheckbox";
 import { FormInput } from "../../components/FormInput";
@@ -37,7 +37,7 @@ export const NextUIRHFDemoForm = () => {
     dirty:() => (<JsonDisplay jsonData={formContext.formState.dirtyFields}/>),
   }
 
-  const { setSelectedModal, DisplayedModal } = useModal(modalContent)
+  const { setSelectedModal, Modal } = useModal(modalContent)
   
   const {
     inputStyles,
@@ -48,7 +48,7 @@ export const NextUIRHFDemoForm = () => {
 
   return (
     <>
-      <DisplayedModal />
+      <Modal />
       <Collapse.Group>
         <Collapse title='Change Styles'>
           <Grid.Container alignContent="center" gap={2}>

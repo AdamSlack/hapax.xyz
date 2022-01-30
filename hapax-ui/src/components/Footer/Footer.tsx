@@ -1,4 +1,4 @@
-import { Avatar, Card, Grid, Text, Link, Divider } from "@nextui-org/react";
+import { Avatar, Grid, Text, Link, Divider } from "@nextui-org/react";
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si'
 import { GITHUB_URL, TWITTER_URL, LINKEDIN_URL } from '../../consts/links';
 
