@@ -1,4 +1,5 @@
-import { Grid, Spacer, Text } from "@nextui-org/react"
+import { Grid, Text } from "@nextui-org/react"
+import MainLayout from "../../Layouts/MainLayout"
 
 const orangeCssGradient = {
   textGradient: '45deg, $yellow500 -20%, $red500 100%'
@@ -15,31 +16,18 @@ const purpleCssGradient = {
 
 export const HomePage = () => {
   return (
-    <>
-      <Grid.Container gap={4}>
-        <Grid xs={0} sm={0} md={2} lg={2} xl={3}>
-          <Spacer />
-        </Grid>
-        <Grid>
-          <Text
-            size={60}
-          >
-            <Text size={60} small css={orangeCssGradient}>Full stack</Text> engineering
-          </Text>
-        </Grid>
-      </Grid.Container>
-
-      <Grid.Container gap={4} justify='flex-end'>
-        <Grid>
-          <Text size={60}>
-            <Text size={60} small css={purpleCssGradient}>End-to-end</Text> solutions
-          </Text>
-        </Grid>
-        <Grid xs={0} sm={0} md={2} lg={2} xl={3}>
-          <Spacer />
-        </Grid>
-      </Grid.Container>
-    </>
+    <MainLayout>
+      <Grid xs={12}>
+        <Text size={60}>
+          <Text size={60} span css={orangeCssGradient} >Full stack</Text> engineering
+        </Text>
+      </Grid>
+      <Grid xs={12}>
+        <Text size={60}>
+          <Text size={60} span css={purpleCssGradient}>End-to-end</Text> solutions
+        </Text>
+      </Grid>
+    </MainLayout>
   )
 };
 

@@ -6,9 +6,11 @@ import {
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { useTheme } from './hooks/useTheme'
-import { NextUIRHFDemoPage, HomePage } from './pages';
 
 import './App.css'
+import { navLinks } from './consts/NavLinks';
+import { HomePage, NextUIRHFDemoPage } from './pages';
+import { CodeDemoPage } from './pages/CodeDemoPage';
 
 function App() {
   const {theme, setTheme } = useTheme();
@@ -18,9 +20,14 @@ function App() {
       <Header onThemeChange={setTheme}/>
       <div className="content">
         <Routes>
-          <Route path='/' element={<HomePage />} /> 
-          <Route path='/home' element={<HomePage />} /> 
-          <Route path='/next-ui-react-hook-form-demo' element={<NextUIRHFDemoPage />} /> 
+          {
+            navLinks.map(({ path, element}) => (
+              <Route path={path} element={element} key={path} />
+            ))
+          }
+          <Route path='/' element={<HomePage />} />
+          <Route path='/blog/next-ui-react-hook-form' element={<NextUIRHFDemoPage />} />
+          <Route path='/blog/code-blog-demo' element={<CodeDemoPage />} />
         </Routes>
         </div>
       <Footer />
