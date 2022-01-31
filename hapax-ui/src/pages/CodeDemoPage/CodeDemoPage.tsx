@@ -1,5 +1,4 @@
 import { gradientDark as darkStyle } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { a11yLight as lightStyle } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { Grid, useTheme } from "@nextui-org/react"
 import { CodeBlock } from "../../components/CodeBlock"
@@ -28,15 +27,17 @@ module.exports = {
 
 export const CodeDemoPage = () => {
 
-  const { isDark } = useTheme();
+  const { isDark, theme } = useTheme();
   
-  const background = isDark ? '$gray900  !important' : '$gray100  !important'
-  const style = isDark ? darkStyle : lightStyle;
+  console.log(theme?.colors.code)
+
+  const background = isDark ? '$gray900  !important' : '#363449  !important'
   return (
     <MainLayout>
       <Grid xs={12} css={{
         code: {
           w: '100%',
+          color: isDark ? '$code !important': '$codeLight !important', 
           background: 'none'
         },
         pre: {
@@ -44,7 +45,7 @@ export const CodeDemoPage = () => {
           background,
         }
       }}>
-      <CodeBlock language="javascript" code={code} style={style}/>
+        <CodeBlock language="javascript" code={code} style={darkStyle}/>
       </Grid>
     </MainLayout>
   )

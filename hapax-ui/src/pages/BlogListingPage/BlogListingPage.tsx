@@ -20,7 +20,7 @@ export const BlogListingPage = () => {
       </Grid>
       {
         blogPosts.map(({ title, path, summary }, index) => (
-          <Grid key={`${path}-${index}`} xs={12} md={4}>
+          <Grid key={`${path}-${index}`} xs={12} sm={6} md={6} lg={4}>
             <Card hoverable clickable onClick={() => navigate(path)}>
               <Card.Body css={{ py: '$10'}}>
                 <Text h4>{title}</Text>

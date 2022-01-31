@@ -9,7 +9,7 @@ export const MainLayout = (props: MainLayoutProps) => {
 
   return (
     <Grid.Container gap={4} justify='center'>
-      <Grid xs={12} md={6}>
+      <Grid xs={12} sm={9} md={9} lg={7} xl={6}>
         <Grid.Container gap={1}>
           {children}
         </Grid.Container>

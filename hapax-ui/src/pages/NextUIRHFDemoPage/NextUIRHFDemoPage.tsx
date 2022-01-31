@@ -54,7 +54,7 @@ export const NextUIRHFDemoPage = () => {
       </Grid>
         
       <Grid xs={12}>
-        <Collapse.Group>
+        <Collapse.Group css={{mw: '100%'}}>
           <Collapse title='Change Styles'>
             <Grid.Container alignContent="center" gap={2}>
               <Grid>
